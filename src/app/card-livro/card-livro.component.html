@@ -1,0 +1,12 @@
+<div *ngIf = "remover">
+<div *ngFor="let livro of livros">
+    <h2>{{ livro.titulo }}</h2>
+    <p>{{ livro.quantidade }}</p>
+    <p>{{ livro.preco }}</p>
+    <p>{{ livro.disponivel }}</p>
+    <p>{{ livro.classificacao }}</p>
+  </div>
+</div>
+<button (click)="getLivros()">LISTAR LIVROS</button>
+<button (click)="removerLivros()">REMOVER LIVROS</button>
+

@@ -8,11 +8,15 @@ import { CorsInterceptor } from './cors.interceptor';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { LoginComponent } from './login/login.component';
+import { CardLivroComponent } from './card-livro/card-livro.component';
+import { HomeComponent } from './home/home.component';
 
 @NgModule({
   declarations: [
     AppComponent,
-    LoginComponent
+    LoginComponent,
+    CardLivroComponent,
+    HomeComponent
   ],
   imports: [
     BrowserModule,
@@ -20,11 +24,12 @@ import { LoginComponent } from './login/login.component';
     HttpClientModule,
     FormsModule
   ],
-  providers: [
+  providers: [LoginComponent,
     {
       provide: HTTP_INTERCEPTORS,
       useClass: CorsInterceptor,
       multi: true
+      
     }
   ],
   bootstrap: [AppComponent]
